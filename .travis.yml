@@ -5,6 +5,8 @@ services:
 # script:
 # - docker run youstest/docker-react npm run test -- --coverage
 
+language: node_js
+
 before_install:
  - docker build -t youstest/docker-react -f Dockerfile.dev .
 
