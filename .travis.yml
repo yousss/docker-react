@@ -2,12 +2,11 @@ sudo: required
 services:
  - docker
 
-before_install:
- - "travis_wait 30 sleep 1800 &"
- - docker build -t youstest/docker-react -f Dockerfile.dev .
-
 script:
- - docker run youstest/docker-react npm run test -- --coverage
+ - docker run script:youstest/docker-react npm run test -- --coverage
+
+before_install:
+ - docker build -t youstest/docker-react -f Dockerfile.dev .
 
 deploy:
  provider: elasticbeanstalk
