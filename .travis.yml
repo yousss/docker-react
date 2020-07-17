@@ -2,8 +2,8 @@ sudo: required
 services:
  - docker
 
-script:
- - docker run youstest/docker-react npm run test -- --coverage
+# script:
+# - docker run youstest/docker-react npm run test -- --coverage
 
 before_install:
  - docker build -t youstest/docker-react -f Dockerfile.dev .
